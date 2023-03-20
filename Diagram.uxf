@@ -1,0 +1,41 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>380</x><y>190</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;Card&gt;&gt;
+--
+cards: Card
+cardType: str
+--
++getCard(): Card
+--
+Responsibilities
+-- hold card's value
+*-- Resp2*</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>670</x><y>190</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;Player&gt;&gt;
+--
+-id: Long
+-hand: Card
+-tableau: Card
+--
+#getHand: hand
+#playTableau():tableau
+--
+Responsibilities
+-- Resp1
+*-- Resp2*</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>380</x><y>420</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;Game&gt;&gt;
+--
+-player: Player
+-deck: Deck
+-playerHand: Card
+-playerPoint: int
+--
+#drawHand():hand
+#switchHand
++shuffleDeck
++clucPlayersPoint
++outputResult
+--
+Responsibilities
+-- Resp1
+*-- Resp2*</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>70</x><y>190</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;Deck&gt;&gt;
+--
+numOfCards: int
+--
+Responsibilities
+-- hold the cards of a deck</panel_attributes><additional_attributes></additional_attributes></element></diagram>
