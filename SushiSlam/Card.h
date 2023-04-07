@@ -17,6 +17,7 @@ public:
     int maki_roll_3{};
     int dumpling{};
 
+    string print() const;
 };
 
 class base_card {

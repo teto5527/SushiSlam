@@ -1,6 +1,37 @@
 #include "Card.h"
 using namespace std;
 
+string card_list::print() const
+{
+    string ret{};
+    if (tempura)
+        ret += "tempura: " + to_string(tempura) + "\n";
+    if (maki_roll_1)
+        ret += "maki roll 1: " + to_string(maki_roll_1) + "\n";
+    if (maki_roll_2)
+        ret += "maki roll 2: " + to_string(maki_roll_2) + "\n";
+    if (maki_roll_3)
+        ret += "maki roll 3: " + to_string(maki_roll_3) + "\n";
+    if (sashimi)
+        ret += "sashimi: " + to_string(sashimi) + "\n";
+    if (nigiri_egg)
+        ret += "nigiri 1: " + to_string(nigiri_egg) + "\n";
+    if (nigiri_salmon)
+        ret += "nigiri 2: " + to_string(nigiri_salmon) + "\n";
+    if (nigiri_squid)
+        ret += "nigiri 3: " + to_string(nigiri_squid) + "\n";
+
+
+    if (maki_roll_1)
+        ret += "wasabi & nigiri 1: " + to_string(maki_roll_1) + "\n";
+    if (maki_roll_2)
+        ret += "wasabi & nigiri 2: " + to_string(maki_roll_2) + "\n";
+    if (maki_roll_3)
+        ret += "wasabi & nigiri 3: " + to_string(maki_roll_3) + "\n";
+    if (dumpling)
+        ret += "dumplings: " + to_string(dumpling) + "\n";
+    return ret;
+}
 
 void tempura::play(card_list& cards)
 {
