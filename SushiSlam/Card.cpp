@@ -23,13 +23,13 @@ string card_list::print() const
 
 
     if (maki_roll_1)
-        ret += "wasabi & nigiri 1: " + to_string(maki_roll_1) + "\n";
+        ret += "single maki roll: " + to_string(maki_roll_1) + "\n";
     if (maki_roll_2)
-        ret += "wasabi & nigiri 2: " + to_string(maki_roll_2) + "\n";
+        ret += "double maki roll: " + to_string(maki_roll_2) + "\n";
     if (maki_roll_3)
-        ret += "wasabi & nigiri 3: " + to_string(maki_roll_3) + "\n";
+        ret += "triple maki roll: " + to_string(maki_roll_3) + "\n";
     if (dumpling)
-        ret += "dumplings: " + to_string(dumpling) + "\n";
+        ret += "dumpling: " + to_string(dumpling) + "\n";
     return ret;
 }
 
