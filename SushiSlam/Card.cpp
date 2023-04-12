@@ -1,6 +1,8 @@
 #include "Card.h"
+#include "string"
 using namespace std;
 
+/*
 string card_list::print() const
 {
     string ret{};
@@ -32,91 +34,92 @@ string card_list::print() const
         ret += "dumpling: " + to_string(dumpling) + "\n";
     return ret;
 }
+*/
 
-void tempura::play(card_list& cards)
+void Tempura::play(card_list& cards)
 {
     ++cards.tempura;
 }
 
-card_type tempura::get_card() const
+card_type Tempura::get_card() const
 {
     return card_type::tempura;
 }
 
-void sashimi::play(card_list& cards)
+void Sashimi::play(card_list& cards)
 {
     ++cards.sashimi;
 }
 
-card_type sashimi::get_card() const
+card_type Sashimi::get_card() const
 {
     return card_type::sashimi;
 }
 
-void nigiri_egg::play(card_list& cards)
+void Nigiri_egg::play(card_list& cards)
 {
     ++cards.nigiri_egg;
 }
 
-card_type nigiri_egg::get_card() const
+card_type Nigiri_egg::get_card() const
 {
     return card_type::nigiri_egg;
 }
 
-void nigiri_salmon::play(card_list& cards)
+void Nigiri_salmon::play(card_list& cards)
 {
     ++cards.sashimi;
 }
 
-card_type nigiri_salmon::get_card() const
+card_type Nigiri_salmon::get_card() const
 {
     return card_type::nigiri_salmon;
 }
 
-void nigiri_squid::play(card_list& cards)
+void Nigiri_squid::play(card_list& cards)
 {
     ++cards.nigiri_squid;
 }
 
-card_type nigiri_squid::get_card() const
+card_type Nigiri_squid::get_card() const
 {
     return card_type::nigiri_squid;
 }
 
-void maki_roll_1::play(card_list& cards)
+void Maki_roll_1::play(card_list& cards)
 {
     ++cards.maki_roll_1;
 }
 
-card_type maki_roll_1::get_card() const
+card_type Maki_roll_1::get_card() const
 {
     return card_type::maki_roll_1;
 }
-void maki_roll_2::play(card_list& cards)
+void Maki_roll_2::play(card_list& cards)
 {
     ++cards.maki_roll_2;
 }
 
-card_type maki_roll_2::get_card() const
+card_type Maki_roll_2::get_card() const
 {
     return card_type::maki_roll_2;
 }
-void maki_roll_3::play(card_list& cards)
+void Maki_roll_3::play(card_list& cards)
 {
     ++cards.maki_roll_3;
 }
 
-card_type maki_roll_3::get_card() const
+card_type Maki_roll_3::get_card() const
 {
     return card_type::maki_roll_3;
 }
 
-void dumpling::play(card_list& cards)
+void Dumpling::play(card_list& cards)
 {
     ++cards.dumpling;
 }
 
-card_type dumpling::get_card() const
+card_type Dumpling::get_card() const
 {
     return card_type::dumpling;
 }

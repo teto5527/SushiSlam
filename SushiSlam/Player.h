@@ -1,14 +1,28 @@
 #include "Card.h"
 #include <vector>
+#include <string>
 
 using namespace std;
 
-class base_player;
 
-class base_player {
+typedef unique_ptr<Card> card_type;
+typedef unique_ptr<Player> player_type;
+
+class Player {
 public:
-	virtual ~base_player() = default;
-	void play_card();
-	int points() const;
+	card_collection* hand{};
+	card_collection* tableau{};
 
+	virtual ~Player() = default;
+	string get_name() const;
+	string print_tableau(card_collection* tableau) const;
+	void clear_tableau(card_collection *tableau);
+	void add_card_to_hand(Card* card, card_collection* hand);
+	int culc_score(card_collection* tableau) const;
+
+
+
+
+protected:
+	string _name;
 };

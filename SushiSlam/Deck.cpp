@@ -35,10 +35,13 @@ Deck::Deck() {
 
 
 
+
 unique_ptr<base_card> Deck::draw()
 {
-	auto card_deawed = move(cards[cards.size() - 1]);
+	//auto card_deawed = move(cards[cards.size() - 1]);
+	auto card_deawed = move(cards.back()); //transfer ownership of the pointer from the vector to the unique_ptr
 	cards.pop_back();
 
 	return card_deawed;
 }
+
