@@ -18,14 +18,19 @@ string Player::get_name() const
 	return _name;
 };
 
-string Player::print_tableau(card_collection* tableau) const
+card_collection Player::get_tableau() const
+{
+	return *_tableau;
+};
+
+string Player::print_tableau(card_collection* tableau)
 {
 	string ret{};
 	for (auto c : *tableau) {
 		ret += c.str();
 	}
 	return ret;
-};
+}; 
 
 void Player::clear_tableau(card_collection* tableau)
 {
@@ -33,7 +38,14 @@ void Player::clear_tableau(card_collection* tableau)
 		delete c;
 	}
 	tableau->clear();
+}
+
+void Player::add_card_to_tableau(card_collection& tableau, int pos, card_collection& hand)
+{
+	hand.push_back(tableau[pos]);
+	tableau.erase(tableau.begin() + pos);
 };
+
 
 void Player::add_card_to_hand(Card* card, card_collection* hand)
 {

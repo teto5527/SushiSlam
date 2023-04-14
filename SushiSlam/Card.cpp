@@ -38,6 +38,7 @@ string card_list::print() const
 
 
 int* Card_collection::score(card_collection& tableau_one, card_collection& tableau_two) {
+    //feel diffcult to use, so I write a new one in game.cpp
     for (auto c : tableau_one) {
         if (c.get_card() == card_type::tempura) {
             tempura_one++;
@@ -158,19 +159,9 @@ int* Card_collection::score(card_collection& tableau_one, card_collection& table
 };
 
 
-void Tempura::play(card_collection& cards)
-{
-    ++cards.tempura;
-}
-
 card_type Tempura::get_card() const
 {
     return card_type::tempura;
-}
-
-void Sashimi::play(card_collection& cards)
-{
-    ++cards.sashimi;
 }
 
 card_type Sashimi::get_card() const
@@ -178,19 +169,9 @@ card_type Sashimi::get_card() const
     return card_type::sashimi;
 }
 
-void Nigiri_egg::play(card_collection& cards)
-{
-    ++cards.nigiri_egg;
-}
-
 card_type Nigiri_egg::get_card() const
 {
     return card_type::nigiri_egg;
-}
-
-void Nigiri_salmon::play(card_collection& cards)
-{
-    ++cards.sashimi;
 }
 
 card_type Nigiri_salmon::get_card() const
@@ -198,37 +179,20 @@ card_type Nigiri_salmon::get_card() const
     return card_type::nigiri_salmon;
 }
 
-void Nigiri_squid::play(card_collection& cards)
-{
-    ++cards.nigiri_squid;
-}
-
 card_type Nigiri_squid::get_card() const
 {
     return card_type::nigiri_squid;
 }
 
-void Maki_roll_1::play(card_collection& cards)
-{
-    ++cards.maki_roll_1;
-}
 
 card_type Maki_roll_1::get_card() const
 {
     return card_type::maki_roll_1;
 }
-void Maki_roll_2::play(card_collection& cards)
-{
-    ++cards.maki_roll_2;
-}
 
 card_type Maki_roll_2::get_card() const
 {
     return card_type::maki_roll_2;
-}
-void Maki_roll_3::play(card_collection& cards)
-{
-    ++cards.maki_roll_3;
 }
 
 card_type Maki_roll_3::get_card() const
@@ -236,10 +200,6 @@ card_type Maki_roll_3::get_card() const
     return card_type::maki_roll_3;
 }
 
-void Dumpling::play(card_collection& cards)
-{
-    ++cards.dumpling;
-}
 
 card_type Dumpling::get_card() const
 {

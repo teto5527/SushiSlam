@@ -14,8 +14,10 @@ public:
 
 private:
     vector<Player> m_players;
-    card_collection m_deck;
+    card_collection deck;
     int round_count;
 
-    void print_round();
+    void display_tableau(Player p) const;
+    void display_hand(int round) const;
+    void display_score(card_collection t) const;
 };

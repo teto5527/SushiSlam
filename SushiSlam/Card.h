@@ -8,7 +8,6 @@ enum card_type { tempura, sashimi, nigiri_egg, nigiri_salmon, nigiri_squid, maki
 class Card {
 public:
     virtual ~Card() = default;
-    virtual void play(card_collection& cards) = 0;
     virtual card_type get_card() const = 0;
     virtual string str() const = 0;
 
@@ -58,7 +57,6 @@ public:
 
 class Tempura : public Card{
 public:
-    void play(card_collection& cards) override;
     card_type get_card() const override;
     string str() const override {
         return "tempura";
@@ -67,7 +65,6 @@ public:
 
 class Sashimi : public Card {
 public:
-    void play(card_collection& cards) override;
     card_type get_card() const override;
     string str() const override {
         return "sashimi";
@@ -76,7 +73,6 @@ public:
 
 class Nigiri_egg : public Card {
 public:
-    void play(card_collection& cards) override;
     card_type get_card() const override;
     string str() const override {
         return "nigiri egg";
@@ -85,7 +81,6 @@ public:
 
 class Nigiri_salmon : public Card {
 public:
-    void play(card_collection& cards) override;
     card_type get_card() const override;
     string str() const override {
 		return "nigiri salmon";
@@ -94,7 +89,6 @@ public:
 
 class Nigiri_squid : public Card {
 public:
-    void play(card_collection& cards) override;
     card_type get_card() const override;
     string str() const override {
         return "nigiri squid";
@@ -103,7 +97,6 @@ public:
 
 class Maki_roll_1 : public Card {
 public:
-    void play(card_collection& cards) override;
     card_type get_card() const override;
     string str() const override {
 		return "one maki roll";
@@ -112,7 +105,6 @@ public:
 
 class Maki_roll_2 : public Card {
 public:
-    void play(card_collection& cards) override;
     card_type get_card() const override;
     string str() const override {
         return "two maki roll";
@@ -121,7 +113,6 @@ public:
 
 class Maki_roll_3 : public Card {
 public:
-    void play(card_collection& cards) override;
     card_type get_card() const override;
     string str() const override {
 		return "three maki roll";
@@ -130,7 +121,6 @@ public:
 
 class Dumpling : public Card {
 public:
-    void play(card_collection& cards) override;
     card_type get_card() const override;
     string str() const override {
 		return "dumpling";

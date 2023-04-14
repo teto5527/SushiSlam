@@ -36,7 +36,7 @@ void Deck::shuffle_deck() {
 
 
 
-unique_ptr<Card> Deck::draw()
+unique_ptr<Card> Deck::draw(int num)
 {
 	//auto card_deawed = move(_cards[_cards.size() - 1]);
 	auto card_deawed = move(_cards.back()); //transfer ownership of the pointer from the vector to the unique_ptr
