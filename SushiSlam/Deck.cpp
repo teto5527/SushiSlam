@@ -9,39 +9,47 @@ using namespace std;
 
 Deck::Deck() {
 	for (int i{}; i < 14; ++i)
-		cards.emplace_back(std::make_unique<tempura>());
+		_cards.emplace_back(std::make_unique<Tempura>());
 	for (int i{}; i < 14; ++i)
-		cards.emplace_back(std::make_unique<sashimi>());
+		_cards.emplace_back(std::make_unique<Sashimi>());
 	for (int i{}; i < 5; ++i)
-		cards.emplace_back(std::make_unique<nigiri_egg>());
+		_cards.emplace_back(std::make_unique<Nigiri_egg>());
 	for (int i{}; i < 10; ++i)
-		cards.emplace_back(std::make_unique<nigiri_salmon>());
+		_cards.emplace_back(std::make_unique<Nigiri_salmon>());
 	for (int i{}; i < 5; ++i)
-		cards.emplace_back(std::make_unique<nigiri_squid>());
+		_cards.emplace_back(std::make_unique<Nigiri_squid>());
 	for (int i{}; i < 6; ++i)
-		cards.emplace_back(std::make_unique<maki_roll_1>());
+		_cards.emplace_back(std::make_unique<Maki_roll_1>());
 	for (int i{}; i < 12; ++i)
-		cards.emplace_back(std::make_unique<maki_roll_2>());
+		_cards.emplace_back(std::make_unique<Maki_roll_2>());
 	for (int i{}; i < 8; ++i)
-		cards.emplace_back(std::make_unique<maki_roll_3>());
+		_cards.emplace_back(std::make_unique<Maki_roll_3>());
 	for (int i{}; i < 14; ++i)
-		cards.emplace_back(std::make_unique<dumpling>());
+		_cards.emplace_back(std::make_unique<Dumpling>());
+}
 
-	random_device rd; //reference https://en.cppreference.com/w/cpp/algorithm/random_shuffle dont know how to work
-	mt19937 g(rd());
-
-	shuffle(cards.begin(), cards.end(), g);
+void Deck::shuffle_deck() {
+	vector<Card*> shuffleDeck{ _cards.begin(), _cards.end() };
+	shuffle(shuffleDeck.begin(), shuffleDeck.end(), mt19937{ random_device{}() });
+	_cards = card_collection( shuffleDeck.begin(), shuffleDeck.end() );
 }
 
 
 
-
-unique_ptr<base_card> Deck::draw()
+unique_ptr<Card> Deck::draw()
 {
-	//auto card_deawed = move(cards[cards.size() - 1]);
-	auto card_deawed = move(cards.back()); //transfer ownership of the pointer from the vector to the unique_ptr
-	cards.pop_back();
+	//auto card_deawed = move(_cards[_cards.size() - 1]);
+	auto card_deawed = move(_cards.back()); //transfer ownership of the pointer from the vector to the unique_ptr
+	_cards.pop_back();
 
 	return card_deawed;
 }
+
+string Deck::print()
+{
+	string ret{};
+	for (auto& card : _cards)
+		ret += card->str() + "";
+};
+
 

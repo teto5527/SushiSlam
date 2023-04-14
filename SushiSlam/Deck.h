@@ -7,9 +7,10 @@ class Deck
 {
 public:
     Deck();
+    void shuffle_deck();
     unique_ptr<Card> draw();
-    string print(Deck deck);
+    string print();
 private:
-    vector<unique_ptr<Card>> cards{};
+    card_collection _cards{};
 };
 

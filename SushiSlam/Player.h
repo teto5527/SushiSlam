@@ -18,7 +18,7 @@ public:
 	string print_tableau(card_collection* tableau) const;
 	void clear_tableau(card_collection *tableau);
 	void add_card_to_hand(Card* card, card_collection* hand);
-	int culc_score(card_collection* tableau) const;
+	int show_score(Player _name) const;
 
 
 

@@ -40,9 +40,9 @@ void Player::add_card_to_hand(Card* card, card_collection* hand)
 	hand->push_back(card);
 };
 
-int Player::culc_score(card_collection* tableau) const
+int Player::show_score(Player _name) const
 {
-	int 
+	
 };
 
 
